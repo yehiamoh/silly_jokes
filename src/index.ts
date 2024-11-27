@@ -9,6 +9,8 @@ app.use("api/v1",(req,res)=>{
    })
 })
 
+export default app;
+
 /*app.listen(8080,()=>{
    console.log(`app is running on port 8080`);
 });*/
