@@ -9,6 +9,6 @@ app.use("api/v1",(req,res)=>{
    })
 })
 
-app.listen(8080,()=>{
+/*app.listen(8080,()=>{
    console.log(`app is running on port 8080`);
-});
+});*/
