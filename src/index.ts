@@ -1,15 +1,24 @@
 import express from "express"
+import cors from "cors"
+import dbConnection from "./db/db";
+import errorHandler from "./middleware/error_handler";
+import authRouter from "./routes/auth_routes";
 const app =express();
 
 
-app.use(express.json())
+(async()=>{await dbConnection()})(); //IIFE (Immediately Invoked Function Expression):
+
+app.use(cors());
+app.use(express.json());
 
 app.get("/api/v1",(req,res)=>{
    res.json({
       message:"Test api",
       from:"Yehia mohamed"
    })
-})
+});
+app.use("/api/v0",authRouter);
+app.use(errorHandler);
 
 export default app;
 
