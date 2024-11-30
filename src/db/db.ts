@@ -3,6 +3,7 @@ import mongoose from "mongoose"
 dotenv.config()
 
 const dbUrl=process.env.DATABASE_URL as string;
+console.log("Database URL : ",dbUrl)
 
 
 const dbConnection = async()=>{
