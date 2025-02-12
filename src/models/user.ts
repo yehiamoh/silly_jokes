@@ -1,6 +1,7 @@
-import mongoose, { Schema, Document, model } from "mongoose";
+import mongoose, { Schema, Document, model ,Types} from "mongoose";
 
 interface IUser extends Document {
+  _id:Types.ObjectId;
   user_name: string;
   password: string;
 }

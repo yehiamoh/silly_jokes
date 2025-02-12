@@ -3,6 +3,7 @@ import cors from "cors"
 import dbConnection from "./db/db";
 import errorHandler from "./middleware/error_handler";
 import authRouter from "./routes/auth_routes";
+import jokeRouter from "./routes/joke_routes";
 const app =express();
 
 
@@ -18,10 +19,11 @@ app.get("/api/v1",(req,res)=>{
    })
 });
 app.use("/api/v0",authRouter);
+app.use("/api/v0",jokeRouter);
 app.use(errorHandler);
 
 export default app;
 
-/*app.listen(8080,()=>{
+app.listen(8080,()=>{
    console.log(`app is running on port 8080`);
-});*/
+});
