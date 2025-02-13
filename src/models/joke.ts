@@ -7,6 +7,7 @@ interface IJoke extends Document {
   created_At: Date;
   updated_At: Date;
   author: mongoose.Schema.Types.ObjectId;
+  categories:mongoose.Schema.Types.ObjectId[]
 }
 
 const jokeSchema: Schema = new Schema(
@@ -31,6 +32,11 @@ const jokeSchema: Schema = new Schema(
       ref: "User",
       required: true,
     },
+    categories:[{
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"Category",
+
+    }]
   },
   {
     timestamps: true,
